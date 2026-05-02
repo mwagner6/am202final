@@ -26,7 +26,7 @@ class KSParams:
     Ny: int = 128
 
     t_final: float = 20.0
-    dt_max: float = 0.01
+    dt: float = 0.01
     save_every: int = 5
 
     ic_type: Literal[

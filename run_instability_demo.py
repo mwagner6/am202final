@@ -14,7 +14,7 @@ BASE = KSParams(
     q_type="volume_filling", u_max=1.0,
     Lx=20.0, Ly=20.0, Nx=64, Ny=64,
     t_final=20.0,
-    dt_max=0.005,
+    dt=0.005,
     save_every=80,
     ic_type="gaussian_lattice",
     ic_mean_u=0.3,

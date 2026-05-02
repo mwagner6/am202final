@@ -41,15 +41,14 @@ class SolverTumorNoDrift2D:
 
     def run(self, progress=True):
         p = self.p
-        dt = p.dt_max
+        dt = p.dt
         frames = [(self.t, self.u.copy(), self.v.copy(), self.w.copy())]
         while self.t < p.t_final - 1e-12:
-            this_dt = min(dt, p.t_final - self.t)
-            self.step(this_dt)
+            self.step(dt)
             if self.step_count % p.save_every == 0:
                 frames.append((self.t, self.u.copy(), self.v.copy(), self.w.copy()))
                 if progress:
-                    print(f"  t={self.t:7.3f}  dt={this_dt:.2e}  "
+                    print(f"  t={self.t:7.3f}  dt={dt:.2e}  "
                           f"u:[{self.u.min():.3f},{self.u.max():.3f}]  "
                           f"v:[{self.v.min():.3f},{self.v.max():.3f}]  "
                           f"w:[{self.w.min():.3f},{self.w.max():.3f}]  "

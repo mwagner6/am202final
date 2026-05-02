@@ -18,7 +18,7 @@ params = KSParams(
     Nx=128, Ny=128,
 
     t_final=40.0,
-    dt_max=0.01,
+    dt=0.01,
     save_every=15,
 
     ic_type="centered_v_spike",
@@ -54,7 +54,7 @@ def main():
     print(f"  grid:   {params.Nx} x {params.Ny}   domain: {params.Lx} x {params.Ly}")
     print(f"  q(u):   {params.q_type}   D_u={params.D_u}  D_v={params.D_v}  "
           f"alpha_u={params.alpha_u}  beta={params.beta}")
-    print(f"  t_final = {params.t_final}, dt = {params.dt_max}")
+    print(f"  t_final = {params.t_final}, dt = {params.dt}")
 
     u0, v0 = initial.make_initial(params, ndim=2)
     solver = Solver2D(params, u0, v0)

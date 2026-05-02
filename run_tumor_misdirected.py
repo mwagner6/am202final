@@ -28,7 +28,7 @@ params = KSParams(
     Nx=128, Ny=128,
 
     t_final=30.0,
-    dt_max=0.005,
+    dt=0.005,
     save_every=40,
 
     ic_type="tumor_blob",
@@ -76,7 +76,7 @@ def main():
     print(f"  tumor src:  alpha_w={params.alpha_w}")
     print(f"  tumor:      rho={params.rho}  w_max={params.w_max}  kappa={params.kappa}")
     print(f"  v ring:     amplitude {params.ic_v_ring_amplitude} at radius {params.ic_v_ring_radius}")
-    print(f"  t_final = {params.t_final}, dt = {params.dt_max}")
+    print(f"  t_final = {params.t_final}, dt = {params.dt}")
     print()
 
     u0, v0, w0 = initial.make_initial_tumor(params, ndim=2)
